@@ -1,4 +1,7 @@
 const Strings ={
+    ENTER_NO : 'Enter number',
+    PRESS: 'Press',
+    CLOSE : 'Close',
    OPEN_MODAL : 'Open Modal',
     RECENT : 'Recent',
     REVIEW_YOUR_INTERVIEW : ' Review Your Interview',

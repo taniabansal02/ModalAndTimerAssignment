@@ -46,7 +46,7 @@ export const styles = StyleSheet.create({
   img: {
     height: moderateScaleVertical(26),
     width: moderateScale(221), 
-    alignSelf:'center'
+    alignSelf:'center',
   },
   timerCol : {
     flexDirection:'column', 
@@ -78,8 +78,10 @@ export const styles = StyleSheet.create({
    
   },
   eventDetailView : {
+    marginTop: moderateScaleVertical(43),
     flexDirection: 'column',
-    gap: 10,
+    alignItems:'flex-start',
+    gap: 8,
   },
   recentTxtView: {
     width: moderateScale(76),
@@ -111,7 +113,7 @@ export const styles = StyleSheet.create({
   headingTxt: {
     color: 'black',
     fontFamily: fonts.RobotoMedium,
-    fontSize: textScale(12),
+    fontSize: textScale(10),
   },
   valueTxt: {
     color: 'black',

@@ -14,8 +14,6 @@ import Modal from 'react-native-modal';
 import {Icons} from '../../assets/images';
 import BackgroundTimer from 'react-native-background-timer';
 import Page1 from '../../assets/images/Page-1.png';
-import Page1_2x from '../../assets/images/Page-1@2x.png';
-import Page1_3x from '../../assets/images/Page-1@3x.png';
 import {styles} from './style';
 import Strings from '../../assets/strings';
 
@@ -28,7 +26,7 @@ const DetailPage = () => {
   const [sec, setSec] = useState('');
 
   // getTimer function takes seconds and calculates day, hour, minutes and seconds
-  const getTimer = (seconds) => {
+  const getTimer = seconds => {
     let d = Math.floor(seconds / 86400);
     let h = Math.floor((seconds % 86400) / 3600);
     let m = Math.floor((seconds % 3600) / 60);
@@ -66,7 +64,6 @@ const DetailPage = () => {
     }
   }, [globalTimer]);
 
-
   const toggleModal = () => {
     setIsModalVisible(!isModalVisible);
   };
@@ -80,9 +77,8 @@ const DetailPage = () => {
 
         <Modal isVisible={isModalVisible} style={styles.modalContainer}>
           <View style={styles.modalView}>
-            <ScrollView contentContainerStyle={styles.scrollViewStyle}>
-
-              {/* ******************* Image displays how much time is left for the event to occur ********************* */}
+            {/* ******************* Image displays how much time is left for the event to occur ********************* */}
+            <View style={{position: 'relative', bottom: moderateScaleVertical(5)}}>
               <ImageBackground source={Page1} style={styles.img}>
                 <View style={styles.timerCol}>
                   <View style={styles.timerRow}>
@@ -103,7 +99,8 @@ const DetailPage = () => {
                   </View>
                 </View>
               </ImageBackground>
-
+            </View>
+            <ScrollView contentContainerStyle={styles.scrollViewStyle}>
               {/* ******************* Button to close the modal ********************* */}
               <TouchableOpacity
                 onPress={toggleModal}
@@ -126,8 +123,8 @@ const DetailPage = () => {
 
                 <View style={styles.eventTimingRow}>
                   <Icons.calendar
-                    width={moderateScale(20)}
-                    height={moderateScaleVertical(20)}
+                    // width={moderateScaleVertical(15)}
+                    // height={moderateScaleVertical(15)}
                   />
                   <Text style={styles.headingTxt}>
                     {' '}
@@ -154,9 +151,7 @@ const DetailPage = () => {
                     height={moderateScaleVertical(20)}
                   />
                   <Text style={styles.headingTxt}> {Strings.BY} </Text>
-                  <Text style={styles.valueTxt}>
-                    {Strings.PAGEANT_PLANET}{' '}
-                  </Text>
+                  <Text style={styles.valueTxt}>{Strings.PAGEANT_PLANET} </Text>
                 </View>
               </View>
 
