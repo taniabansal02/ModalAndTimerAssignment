@@ -122,10 +122,7 @@ const DetailPage = () => {
                 </Text>
 
                 <View style={styles.eventTimingRow}>
-                  <Icons.calendar
-                    // width={moderateScaleVertical(15)}
-                    // height={moderateScaleVertical(15)}
-                  />
+                  <Icons.calendar />
                   <Text style={styles.headingTxt}>
                     {' '}
                     {Strings.START_DATE_TIME}{' '}
@@ -134,10 +131,7 @@ const DetailPage = () => {
                 </View>
 
                 <View style={styles.eventTimingRow}>
-                  <Icons.calendar
-                    width={moderateScale(20)}
-                    height={moderateScaleVertical(20)}
-                  />
+                  <Icons.calendar />
                   <Text style={styles.headingTxt}>
                     {' '}
                     {Strings.END_DATE_TIME}{' '}
@@ -146,10 +140,7 @@ const DetailPage = () => {
                 </View>
 
                 <View style={styles.eventTimingRow}>
-                  <Icons.avtar
-                    width={moderateScale(20)}
-                    height={moderateScaleVertical(20)}
-                  />
+                  <Icons.avtar/>
                   <Text style={styles.headingTxt}> {Strings.BY} </Text>
                   <Text style={styles.valueTxt}>{Strings.PAGEANT_PLANET} </Text>
                 </View>

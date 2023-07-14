@@ -2,6 +2,7 @@ import React from "react";
 import {View, Text} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import {createStackNavigator} from '@react-navigation/stack';
 import Task1 from "../screen/task1";
 import DetailPage from "../screen/detailPage";
@@ -10,6 +11,8 @@ import { colors } from "../assets/theme/color";
 
 const Stack = createStackNavigator();
 const BottomTabs = createBottomTabNavigator();
+
+const Drawer = createDrawerNavigator();
 
 const Navigation = () => {
   
@@ -97,18 +100,12 @@ const Navigation = () => {
   
   return (
     <NavigationContainer >
-      <Stack.Navigator>
-
-
-       
-        <Stack.Screen
+      <Drawer.Navigator>
+        <Drawer.Screen
           name='BottomNavigation'
-          component={BottomNavigation}
-          options={{headerShown: false}}
+          component={BottomNavigation} 
         />
-       
-       
-      </Stack.Navigator>
+      </Drawer.Navigator>
     </NavigationContainer>
   );
 };

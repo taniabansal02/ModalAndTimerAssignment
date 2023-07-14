@@ -29,19 +29,22 @@ export const styles = StyleSheet.create({
     fontSize: textScale(20)
   },
   modalContainer: {
-    width: moderateScale('100%'), 
-    marginLeft: moderateScale(0), 
-    flex: 1
+    flex: 1,
+    flexDirection:'column',
+    alignItems:'flex-start',
+    gap: moderateScale(16),
+    
   },
   modalView: {
     backgroundColor: colors.white,
-    height: moderateScaleVertical(615),
-    marginLeft: moderateScale(20),
+    width: moderateScale(343), 
+    height: moderateScaleVertical(611),
+    // marginLeft: moderateScale(16),
     alignSelf:'center',
     borderRadius: 30,
   },
   scrollViewStyle: {
-    marginHorizontal: moderateScale(20),
+    marginHorizontal: moderateScale(16),
   },
   img: {
     height: moderateScaleVertical(26),
@@ -93,40 +96,57 @@ export const styles = StyleSheet.create({
     paddingHorizontal: moderateScale(12),
     alignItems: 'center',
     justifyContent: 'center',
+    gap: 10,
   },
   recentTxtStyle: {
     color: colors.yellow,
     alignItems: 'center',
     justifyContent: 'center',
     fontFamily: fonts.RobotoMedium,
+    fontSize: textScale(10),
+    fontStyle:'normal',
+    lineHeight: 12,
+    textTransform: 'capitalize',
   },
   reviewInterviewStyle: {
     color: 'black',
     fontFamily: fonts.RobotoMedium,
-    fontSize: textScale(20),
-    lineHeight: 22,
+    fontSize: textScale(14),
+    fontStyle:'normal',
+    lineHeight: 20,
+    textTransform:'capitalize',
   },
   eventTimingRow: {
     flexDirection: 'row', 
-    gap: 4
+    gap: 2,
   },
   headingTxt: {
-    color: 'black',
+    color: '#262425',
     fontFamily: fonts.RobotoMedium,
     fontSize: textScale(10),
+    fontStyle: 'normal',
+    lineHeight: 12,
+    textTransform: 'capitalize',
   },
   valueTxt: {
-    color: 'black',
+    color: '#262425',
     fontFamily: fonts.RobotoRegular,
-    fontSize: textScale(12),
+    fontSize: textScale(10),
+    fontStyle: 'normal',
+    lineHeight: 14,
+    textTransform:'capitalize'
   },
   mainTxt: {
-    color: 'black',
+    color: '#262425',
     fontFamily: fonts.RobotoRegular,
-    fontSize: textScale(14),
+    fontSize: textScale(12),
+    fontStyle:'normal',
     textAlign: 'justify',
-    marginTop: moderateScaleVertical(20),
-    lineHeight: 24,
+    marginTop: moderateScaleVertical(16),
+    lineHeight: 18,
+    textTransform:'capitalize',
+    width: moderateScale(312),
+    height: moderateScaleVertical(364)
   
   },
 });
