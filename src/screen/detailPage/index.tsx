@@ -16,6 +16,7 @@ import BackgroundTimer from 'react-native-background-timer';
 import Page1 from '../../assets/images/Page-1.png';
 import {styles} from './style';
 import Strings from '../../assets/strings';
+import Button from '../../components/button';
 
 const DetailPage = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -70,88 +71,84 @@ const DetailPage = () => {
 
   return (
     <View style={styles.detailPgContainer}>
-      <View style={styles.btnView}>
-        <TouchableOpacity onPress={toggleModal} style={styles.btn}>
-          <Text style={styles.btnTxt}> {Strings.OPEN_MODAL} </Text>
-        </TouchableOpacity>
 
-        <Modal isVisible={isModalVisible} style={styles.modalContainer}>
-          <View style={styles.modalView}>
-            {/* ******************* Image displays how much time is left for the event to occur ********************* */}
-            <View style={{position: 'relative', bottom: moderateScaleVertical(5)}}>
-              <ImageBackground source={Page1} style={styles.img}>
-                <View style={styles.timerCol}>
-                  <View style={styles.timerRow}>
-                    <Text style={styles.timer}>{Strings.DAY}</Text>
-                    <Text style={styles.timer}>{Strings.HOUR}</Text>
-                    <Text style={styles.timer}>{Strings.MIN}</Text>
-                    <Text style={styles.timer}>{Strings.SEC}</Text>
-                  </View>
+      {/* ******************* Button to open Modal ********************* */}
+      <Button fun={() => toggleModal()} title={Strings.OPEN_MODAL} />
 
-                  <View style={styles.timerRow1}>
-                    <Text style={styles.timer2}>{day}</Text>
-                    <Text style={styles.timer2}> {Strings.SYMBOL} </Text>
-                    <Text style={styles.timer2}>{hour}</Text>
-                    <Text style={styles.timer2}> {Strings.SYMBOL} </Text>
-                    <Text style={styles.timer2}>{mins}</Text>
-                    <Text style={styles.timer2}> {Strings.SYMBOL} </Text>
-                    <Text style={styles.timer2}>{sec}</Text>
-                  </View>
-                </View>
-              </ImageBackground>
-            </View>
-            <ScrollView contentContainerStyle={styles.scrollViewStyle}>
-              {/* ******************* Button to close the modal ********************* */}
-              <TouchableOpacity
-                onPress={toggleModal}
-                style={styles.crossBtnStyle}>
-                <Icons.crossBtn
-                  width={moderateScale(32)}
-                  height={moderateScaleVertical(32)}
-                />
-              </TouchableOpacity>
-
-              {/* ******************* Event details ********************* */}
-              <View style={styles.eventDetailView}>
-                <View style={styles.recentTxtView}>
-                  <Text style={styles.recentTxtStyle}>{Strings.RECENT}</Text>
+      <Modal isVisible={isModalVisible} style={styles.modalContainer}>
+        <View style={styles.modalView}>
+          
+          {/* ******************* Image displays how much time is left for the event to occur ********************* */}
+          <View
+            style={{position: 'relative', bottom: moderateScaleVertical(5)}}>
+            <ImageBackground source={Page1} style={styles.img}>
+              <View style={styles.timerCol}>
+                <View style={styles.timerRow}>
+                  <Text style={styles.timer}>{Strings.DAY}</Text>
+                  <Text style={styles.timer}>{Strings.HOUR}</Text>
+                  <Text style={styles.timer}>{Strings.MIN}</Text>
+                  <Text style={styles.timer}>{Strings.SEC}</Text>
                 </View>
 
-                <Text style={styles.reviewInterviewStyle}>
-                  {Strings.REVIEW_YOUR_INTERVIEW}
-                </Text>
-
-                <View style={styles.eventTimingRow}>
-                  <Icons.calendar />
-                  <Text style={styles.headingTxt}>
-                    {' '}
-                    {Strings.START_DATE_TIME}{' '}
-                  </Text>
-                  <Text style={styles.valueTxt}>{Strings.START_DATE} </Text>
-                </View>
-
-                <View style={styles.eventTimingRow}>
-                  <Icons.calendar />
-                  <Text style={styles.headingTxt}>
-                    {' '}
-                    {Strings.END_DATE_TIME}{' '}
-                  </Text>
-                  <Text style={styles.valueTxt}>{Strings.END_DATE}</Text>
-                </View>
-
-                <View style={styles.eventTimingRow}>
-                  <Icons.avtar/>
-                  <Text style={styles.headingTxt}> {Strings.BY} </Text>
-                  <Text style={styles.valueTxt}>{Strings.PAGEANT_PLANET} </Text>
+                <View style={styles.timerRow1}>
+                  <Text style={styles.timer2}>{day}</Text>
+                  <Text style={styles.timer2}> {Strings.SYMBOL} </Text>
+                  <Text style={styles.timer2}>{hour}</Text>
+                  <Text style={styles.timer2}> {Strings.SYMBOL} </Text>
+                  <Text style={styles.timer2}>{mins}</Text>
+                  <Text style={styles.timer2}> {Strings.SYMBOL} </Text>
+                  <Text style={styles.timer2}>{sec}</Text>
                 </View>
               </View>
-
-              <Text style={styles.mainTxt}>{Strings.PARA}</Text>
-              
-            </ScrollView>
+            </ImageBackground>
           </View>
-        </Modal>
-      </View>
+          <ScrollView contentContainerStyle={styles.scrollViewStyle}>
+            {/* ******************* Button to close the modal ********************* */}
+            <TouchableOpacity
+              onPress={toggleModal}
+              style={styles.crossBtnStyle}>
+              <Icons.crossBtn
+                width={moderateScale(32)}
+                height={moderateScaleVertical(32)}
+              />
+            </TouchableOpacity>
+
+            {/* ******************* Event details ********************* */}
+            <View style={styles.eventDetailView}>
+              <View style={styles.recentTxtView}>
+                <Text style={styles.recentTxtStyle}>{Strings.RECENT}</Text>
+              </View>
+
+              <Text style={styles.reviewInterviewStyle}>
+                {Strings.REVIEW_YOUR_INTERVIEW}
+              </Text>
+
+              <View style={styles.eventTimingRow}>
+                <Icons.calendar />
+                <Text style={styles.headingTxt}>
+                  {' '}
+                  {Strings.START_DATE_TIME}{' '}
+                </Text>
+                <Text style={styles.valueTxt}>{Strings.START_DATE} </Text>
+              </View>
+
+              <View style={styles.eventTimingRow}>
+                <Icons.calendar />
+                <Text style={styles.headingTxt}> {Strings.END_DATE_TIME} </Text>
+                <Text style={styles.valueTxt}>{Strings.END_DATE}</Text>
+              </View>
+
+              <View style={styles.eventTimingRow}>
+                <Icons.avtar />
+                <Text style={styles.headingTxt}> {Strings.BY} </Text>
+                <Text style={styles.valueTxt}>{Strings.PAGEANT_PLANET} </Text>
+              </View>
+            </View>
+
+            <Text style={styles.mainTxt}>{Strings.PARA}</Text>
+          </ScrollView>
+        </View>
+      </Modal>
     </View>
   );
 };
