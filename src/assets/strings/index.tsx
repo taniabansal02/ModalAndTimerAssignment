@@ -16,7 +16,11 @@ const Strings ={
     HOUR : "HOUR",
     MIN : "MIN",
     SEC : "SEC",
-    SYMBOL : ':'
+    SYMBOL : ':',
+    ENTER_TEXT: 'Enter text',
+    GO_TO_SCREEN1: 'Go to Screen 2',
+    TEXT_ENTERED_BY_USER: 'Text entered by user is :',
+    GO_BACK: 'Go Back',
 
 }
 

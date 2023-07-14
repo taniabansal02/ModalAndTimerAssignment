@@ -1,11 +1,16 @@
-import React from "react";
-import DetailPage from "../screen/detailPage";
-import Navigation from "../navigation";
+import React, {createContext, useState} from 'react';
+import {Text, View} from 'react-native';
+import Navigation from '../navigation';
+
+export const AppContext = createContext({text: '', setText: () => {}});
 
 const App = () => {
-    return(
-            <Navigation />
-    );
+  const [appText, setAppText] = useState('');
+  return (
+    <AppContext.Provider value={{text: appText, setText: setAppText}}>
+      <Navigation />
+    </AppContext.Provider>
+  );
 };
 
 export default App;
