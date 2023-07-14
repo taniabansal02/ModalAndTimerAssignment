@@ -3,18 +3,19 @@ import {
   View,
   Text,
   TextInput,
-  TouchableOpacity,
   ScrollView,
 } from 'react-native';
 import {styles} from './style';
 import Strings from '../../assets/strings';
+import Button from '../../components/button';
+import {moderateScaleVertical} from '../../components/responsiveSize';
 
 const Task1 = () => {
   const [isActive, setIsActive] = useState(false);
   const [num, setNum] = useState('');
   const [counting, setCounting] = useState([]);
   const arr: any = [];
-  const onHandle = (num) => {
+  const onHandle = num => {
     setIsActive(true);
     if (num != '') {
       for (let i = 1; i <= num; i++) {
@@ -23,7 +24,6 @@ const Task1 = () => {
     }
     setCounting(arr);
   };
-console.log(isActive);
   const onClear = () => {
     setIsActive(false);
     setCounting([]);
@@ -33,7 +33,7 @@ console.log(isActive);
   return (
     <View style={styles.container}>
       <TextInput
-        placeholder= {Strings.ENTER_NO}
+        placeholder={Strings.ENTER_NO}
         keyboardType="numeric"
         value={num}
         onChangeText={val => setNum(val)}
@@ -41,20 +41,21 @@ console.log(isActive);
         maxLength={4}
         style={styles.input}
       />
-     
-      <View style={styles.button}>
-        <TouchableOpacity onPress={() => onHandle(num)}>
-          <Text style={styles.text}> {Strings.PRESS} </Text>
-        </TouchableOpacity>
-      </View>
+
+      <Button
+        fun={() => onHandle(num)}
+        title={Strings.PRESS}
+        mrgBtm={moderateScaleVertical(40)}
+      />
+
       {isActive && counting.length > 0 ? (
         <ScrollView contentContainerStyle={{alignItems: 'center'}}>
           <Text>{counting + ' '}</Text>
-          <View style={styles.button}>
-            <TouchableOpacity onPress={onClear}>
-              <Text style={styles.text}>{Strings.CLOSE} </Text>
-            </TouchableOpacity>
-          </View>
+          <Button
+            fun={() => onClear()}
+            title={Strings.CLOSE}
+            mrgBtm={moderateScaleVertical(120)}
+          />
         </ScrollView>
       ) : null}
     </View>
