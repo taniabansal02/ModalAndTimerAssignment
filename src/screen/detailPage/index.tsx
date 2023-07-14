@@ -147,6 +147,7 @@ const DetailPage = () => {
               </View>
 
               <Text style={styles.mainTxt}>{Strings.PARA}</Text>
+              
             </ScrollView>
           </View>
         </Modal>

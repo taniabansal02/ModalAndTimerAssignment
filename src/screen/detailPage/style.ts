@@ -39,7 +39,6 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.white,
     width: moderateScale(343), 
     height: moderateScaleVertical(611),
-    // marginLeft: moderateScale(16),
     alignSelf:'center',
     borderRadius: 30,
   },
@@ -81,10 +80,10 @@ export const styles = StyleSheet.create({
    
   },
   eventDetailView : {
-    marginTop: moderateScaleVertical(43),
+    marginTop: moderateScaleVertical(14),
     flexDirection: 'column',
     alignItems:'flex-start',
-    gap: 8,
+    gap: moderateScaleVertical(8),
   },
   recentTxtView: {
     width: moderateScale(76),
@@ -96,7 +95,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: moderateScale(12),
     alignItems: 'center',
     justifyContent: 'center',
-    gap: 10,
+    gap: moderateScaleVertical(10),
   },
   recentTxtStyle: {
     color: colors.yellow,
@@ -105,7 +104,7 @@ export const styles = StyleSheet.create({
     fontFamily: fonts.RobotoMedium,
     fontSize: textScale(10),
     fontStyle:'normal',
-    lineHeight: 12,
+    lineHeight: moderateScaleVertical(12),
     textTransform: 'capitalize',
   },
   reviewInterviewStyle: {
@@ -113,40 +112,40 @@ export const styles = StyleSheet.create({
     fontFamily: fonts.RobotoMedium,
     fontSize: textScale(14),
     fontStyle:'normal',
-    lineHeight: 20,
+    lineHeight: moderateScaleVertical(20),
     textTransform:'capitalize',
   },
   eventTimingRow: {
     flexDirection: 'row', 
-    gap: 2,
+    gap: moderateScale(2),
   },
   headingTxt: {
-    color: '#262425',
+    color: colors.black1,
     fontFamily: fonts.RobotoMedium,
     fontSize: textScale(10),
     fontStyle: 'normal',
-    lineHeight: 12,
+    lineHeight: moderateScaleVertical(12),
     textTransform: 'capitalize',
   },
   valueTxt: {
-    color: '#262425',
+    color: colors.black1,
     fontFamily: fonts.RobotoRegular,
     fontSize: textScale(10),
     fontStyle: 'normal',
-    lineHeight: 14,
+    lineHeight: moderateScaleVertical(14),
     textTransform:'capitalize'
   },
   mainTxt: {
-    color: '#262425',
+    color: colors.black,
     fontFamily: fonts.RobotoRegular,
     fontSize: textScale(12),
     fontStyle:'normal',
-    textAlign: 'justify',
     marginTop: moderateScaleVertical(16),
-    lineHeight: 18,
+    lineHeight: moderateScaleVertical(18),
     textTransform:'capitalize',
     width: moderateScale(312),
-    height: moderateScaleVertical(364)
+    height: moderateScaleVertical(611),
+   
   
   },
 });
